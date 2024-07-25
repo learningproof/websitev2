@@ -149,7 +149,7 @@ Mastodon does not have an algorithm, or a particularly useful "global" search (a
 Global reach and global search were specifically **not** design goals of Mastodon; being searchable requires a double opt-in (by server management AND by each user), and the Mastodon developer community has been hostile even to "aftermarket" application of algorithmic feed-sorting to the Mastodon server stack.
 So while algorithms and more powerful global search over a substrate of ActivityPub data from many Mastodon and non-Mastodon servers is entirely _possible_ using non-Mastodon ActivityPub software... that hypothetical software isn't really available in production today on any server that a newsroom could just install and host at its own `social.` subdomain.
 
-## Sidebar: The [One-Website] Alternate Fediverse of BlueSky
+## Sidebar: The Alternate Fediverse of BlueSky
 
 Contrast all of the above with BlueSky, which is [so far] [pre-enshittification](https://doctorow.medium.com/https-pluralistic-net-2024-04-04-teach-me-how-to-shruggie-kagi-caaa88c221f2) and at least in the medium-term credibly friendly towards federated services and forks of its server code.
 It has even promised to federate using its [own federation protocol](https://bsky.social/about/blog/5-5-2023-federation-architecture) that [deliberately reinvents much of ActivityPub](https://atproto.com/guides/faq#why-not-use-activitypub), making it a kind of alternate-fediverse on simplified rails it doesn't yet share with anyone.
@@ -218,7 +218,7 @@ These are:
 2. [Wordpress](https://wordpress.org/), the most widely used and load-bearing Content Management System in history, is rolling out support to make any WordPress "followable" from any ActivityPub client, and working out ways to even make ActivityPub-powered federated comments sections for blog-style sites, one of the [original goals of the standard dating back to 2010](https://www.w3.org/2005/Incubator/federatedsocialweb/wiki/SWAT0).
 3. Similarly open-source (or at least, Community-Edition, for the nitpickers) and self-hostable [Gitlab](), which has long beaten Microsoft-owned GitHub in just about every category except visibility, social-media-like network effects, and freetier subsidies, might finally see some progress on at least one of those categories by enabling [ActivityPub](https://docs.gitlab.com/ee/development/activitypub/), making repositories or packages followable actors for people that want to be notified about (and comment on) binary publication events. (Note that the even more indie option, [Forgejo](https://forgejo.org/) is also [working on ActivityPub support](https://codeberg.org/forgejo/forgejo#what-does-forgejo-offer), which of course opens up the possibility of a whole Gitiverse as well, or maybe Forgeiverse?)
 
-## An Actual Everything App
+## An Actual Everything App, or even an Embarassment of Everything Apps
 
 One of the most esoteric aspects of ActivityPub as a data standard and minimalist messaging protocol that I have only hinted at until now is that ActivityPub isn't, at its lowest level, anything like a Social Media application or even a general-purpose language for building diverse social applications.
 It's actually something far more generic: a messaging protocol somewhere between e-mail and RSS ([RDF Site Summary](https://www.oreilly.com/library/view/web-design-in/0596009879/ch07s08s02.html)), which despite a somewhat fumbled standardization history is still very load-bearing after all these decades since it's the basic mechanism by which podcasts publish new episodes and podcast readers can interchangeably subscribe to them.
@@ -255,10 +255,12 @@ The primitive accumulation and vertical monopoly phase is over, and this is grea
 
 ![Photo of Paris 1968 street scene with graffiti that reads, "Sous les pavés, la plage](/assets/images/sous_les_pavés,_la_plage.jpeg)
 
-It's terrifying tactically to face a power vacuum, but it's also great news that despots have been toppled and that a new age is dawning in which it is no longer profitable to fence and horde network effects and information flows.
-Say what you will about ActivityPub as a data language, and I am the first to admit it inherits some of the wierder and more ungainly aspects of the history of Web Stadna
+It's terrifying, at least tactically, to face a power vacuum, but it's also great news that a generational hegemony is just running out of steam and giving up.
+A new age is dawning in which it will be increasingly less profitable (and bankable) to fence and horde network effects and information flows.
+Say what you will about ActivityPub as a global data language, and I am the first to admit it is a wonky Frankenstein of a standard today, it is at least a workable Esperanto, and a lot easier to hold my nose and work with than a global [data] empire of [California accents](https://www.theguardian.com/books/2023/may/10/palo-alto-book-malcom-harris-interview) on which the sun never sets.
+The W3C has certainly shipped worse.
 
-I don't even worry about whether BlueSky will be more succesful sooner by federating those 4 layers in a different order, because either way [we win](https://berjon.com/user-agency/) as end-users.
+I don't even worry about whether BlueSky will be more succesful sooner by federating those 4 layers in a different order, or by inventing its own streamlined data language, because either way the end result is immensely better than status quo, in that whichever federation protocol wins, [we win](https://berjon.com/user-agency/) as end-users.
 Either way, the economics of information pipelines shift in a better direction, with more regulable and accountable utilities ("firehoses" and "clearinghouses" and "archival nodes") replacing today's vertically-consolidated Standard Oils of social data.
 Everyone can only stand to benefit from that: today's vertical monopolies are holding our grandmothers' inboxes, our local newspapers' loyal readers, everyone student and voter's primary and secondary sources, and our baby pictures hostage.
 However federation proceeds, it's a kind of de-growth and antitrust bonanza, loosening the strangehold hyper-consolidated advertising had up and down the value chain of information industries.
