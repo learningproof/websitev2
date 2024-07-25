@@ -12,8 +12,9 @@ comments: true
 share: true
 related: true
 toc: true
-description: "What should digital editors and news outlets know about ActivityPub?"
-excerpt: "."
+description: "What should digital editors and news outlets know about the social media post-Twitter?"
+excerpt: "Now the music has stopped and we have to wonder: which elements of that now historically-impossible bundle matter most?
+Pick carefully, especially if you're bringing home any or all of the 'social' functions previously hosted in the communications chicken farms of yesterday."
 defaults:
   # _posts
   - scope:
