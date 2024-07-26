@@ -14,6 +14,7 @@ related: true
 toc: true
 description: "What should digital editors and news outlets know about the social media landscape post-Twitter?"
 excerpt: "The technical and architectural tradeoffs along the spectrum from 'self-hosted' social to mega platforms, and the orthogonal question of AP as an open data language."
+image: /assets/images/sous_les_pavés,_la_plage.jpeg
 defaults:
   # _posts
   - scope:

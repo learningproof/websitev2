@@ -513,6 +513,7 @@
   box-shadow: $box-shadow;
   //https://github.com/mmistakes/minimal-mistakes/issues/159#issuecomment-123542528
   position:fixed;
+  bottom: 0.25em;
 
   .nav__title {
     color: #fff;
@@ -534,6 +535,7 @@
   width: 100%;
   list-style: none;
   font-size: $type-size-6;
+  vertical-align:bottom;
 
   @include breakpoint($large) {
     font-size: $type-size-7;
@@ -541,11 +543,12 @@
 
   a {
     display: block;
-    padding: 0.25rem 0.75rem;
+    padding: 0.1rem 0.2rem;
     color: $muted-text-color;
     font-weight: bold;
     line-height: 1.5;
     border-bottom: 1px solid $border-color;
+    vertical-align:bottom;
 
     &:hover {
       color: $text-color;
