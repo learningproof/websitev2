@@ -73,13 +73,13 @@ Twitter was engineered for decades to be coextensive with "the web" rather than 
 By comparison, a typical [young] user today doesn't feel like they are signing up for a web presence directly on any social media website:
 
 * creating a Reddit (or Lemmy) account feels like signing up for a debate club, or some kind of academic senate where the marketplace of ideas is tediusly voted up and down.
-* creating an Instagram account feels like hiring a brand manager taking out an ad in a fashion magazine
-* creating a Facebook account feels like taking out an ad in a [Gannett-owned] local newspaper.
+* creating an Instagram account feels like hiring a brand manager whose first piece of advice is to take out an ad in a fashion magazine
+* creating a Facebook account feels like taking out a halfpage ad in a [Gannett-owned] smalltown local newspaper.
 * creating a Tumblr account (in 2024) feels like getting a booth at an anarchist zine fest-- public, but not visible or mainstream in any sense.
 * creating a Github account or a LinkedIn account feels like getting an Employer Identification Number from the IRS, or buying an Amazon Ring, the footage from which can be analyzed by any future employer and its various machine-learning products.
 
 Partly my argument here is a bit of a sleight of hand, because the comparison of Twitter to "properly" social-media platforms is a bit of a category error, since Twitter is at least as much a publication platform as a "social" one.
-In this sense, it could be argued that it actually outlived its real competition: Google Reader, user-friendly RSS clients, and the mythic webring  salad days of the pre-corporate web from which spawned the neologism of the "[we]blog" in the first place.
+In this sense, it could be argued that it actually outlived its real competition: Google Reader, user-friendly general-purpose RSS clients, and the mythic webring salad days of the pre-corporate web from which spawned the neologism of the "[we]blog" in the first place.
 Squinting a little, we could call Twitter the freemium-model, lightweight, toy version of a more customizable "content management system" like WordPress, which is one of the oldest pillars of the modern web, [powering 40% of it and counting](https://wordpress.org/40-percent-of-web/).
 
 ![dashare.zone meme about bringing back RSS and blogs](/assets/images/dashare.zone--rss-and-blogs.png)
@@ -172,19 +172,27 @@ There's even more rabbitholes to go down, for the news outlet manager looking to
 There's an entire garden of forking techdebts that we call the Fediverse, which are variously accessible to the user of Mastodon (or Threads), and variously functional.
 
 Today's Fediverse is a vast, unfinished Linux of networks that mostly interoperate and mostly "work" in the way that Linux distributions "work", i.e. not at all, at least by the standards of the mainstream consumer used to what Apple and Amazon call "just working".
-Mastodon (the platform) is actually very distinct from ActivityPub (the data language), which means that while users of one Mastodon server can "follow" and interact with users on any other Mastodon-compatible server (neither the domain name NOR the interface gives you any indication of the degree of compatibility, sadly), they can also follow (with variously degraded service and a subset of supported features working as expected) RSS-like content streams from elsewhere in the ActivityPub universe.
+Mastodon (the platform) is actually very distinct from ActivityPub (the data language), which means that while users of one Mastodon server can "follow" and interact with users on any other Mastodon-compatible server, they can also follow (with variously degraded service and a subset of supported features working as expected) RSS-like content streams from elsewhere in the ActivityPub universe.
 
 In the "full Mastodon API support" category we find Zuckerberg's newest property, [Threads.net](https://threads.net).
 Its top-level domain (`.net`) is a subtle nod to the humbler, more utility-like aspirations of Meta's "public option" and, realistically, the most viable Twitter replacement in 2024, at least from the perspective of news outlets looking for maximum reach, minimum risk, and a realistic chance of a "self-hosting option" that can be smoothing upgraded to and downgraded back from.
 (I think that if the American Press Institute ran the same survey today, Threads would take a 2-digit percentage of the pie chart, but that's just my ignorant and tendentious speculation.)
 Threads may not be as wild or organic as BlueSky, or as addictive or libidinal as Instagram, but that's OK, it's not trying to be;
+
 I suspect it's not even trying to be _profitable_, really, or glamorous, or addictive, or innovative in the conventional sense, except insofar as driving hard into the center of the chessboard and being a no-frills loss-leader public option innovates by stretching the definition of social media.
 It may not be immediately obvious what's so innovative about this, but one [intriguing reading of this business-model innovation](https://www.fromjason.xyz/p/notebook/copy-acquire-kill-how-meta-could-pull-off-the-most-extraordinary-pivot-in-tech-history/) posits that as federating with Threads becomes more and more valuable and attractive to the scrappy, bootstrapped, self-hosted servers of the grassroots Fediverse, Threads, Meta, or some cottage industry paying Meta for the privilege could turn around and sell moderation and compliance with Threads' high standards as a commodity per-user or per-post service.
 
-but I would argue that Threads is trying to beat BlueSky and Mastodon and LinkedIn not to profitability but to utility, or to put a finer point on it, beat them at becoming _an informational utility_.
-A huge part of this is that unlike Mastodon, it brings world-class indexing and search and algorithm expertise that it is transfering over to a broader, federated data plane of Threads + Mastodon + GoToSocial (an independent implementation of the Mastodon-API), and hopefully soon many more ActivityPub flavors further from the Mastodon API center of power.
+Coming back to the forward-looking newsroom manager, I would argue that Threads deserves a second look NOT because of its size, its reach, its capitalization, or its market share but its ambitious gambit to reinvent the game and strike a new admixture of silo and open platform.
+Threads is running a different race than it appears to be:
+it is trying to beat BlueSky and Mastodon and LinkedIn not to profitability or to critical mass or even to centrality, but to _utility_, or to put a finer point on it, beat them at becoming _an informational utility_, infrastructure as invisible as golden-age Twitter was and Instagram and Big Blug both failed to be for all their overt `.com` producty-ness.
+A huge part of this is that unlike Mastodon, it brings world-class global indexing and search and algorithm expertise that it is transfering over to a broader, federated data plane of Threads + Mastodon + GoToSocial (an independent re-implementation of the Mastodon-API), and hopefully soon many more ActivityPub flavors further from the Mastodon API center of power.
 Embracing federation this openly means taking the hit of enforcing its quality, brand safety, moderation, and compliance norms on content generated by users it doesn't even serve at the point of federation firehose, which (in business terms) is kind of wildly innovative and novel for a company not known for adopting open standards, open networks, and even a [theoretically portable](https://codeberg.org/fediverse/fep/src/commit/997bc7ee1a31c279f3de8bd7dee4a21c3909ab4b/fep/7952/fep-7952.md), open social graph.
 (Or perhaps armchair pundits like myself give Meta so little credit on the open standards front only because Facebook never publicly commented on its earlier attempt to corral friendly competitors to [embrace an earlier version of the ActivityPub federation standard in 2008-2009](https://archive.org/details/26-10-00_-_15th_anniversary_of_web_3.0_social.qt) before walking away from the idea.)
+
+One particularly user-hostile feature of the Fediverse's radically decentralized, data-first federation to date is that on the level of end-user experience, users have no guarantee when they see a link on their "home server" pointing to, say, `unfamiliar.social` or `@someguy@bumblefudge.com` whether it will be a Mastodon link, a non-Mastodon ActivityPub link, or a third unknown thing.
+To my knowledge no ActivityPub software to date has sorted the namespace of HTTPS URLs into degrees of AP parseability or conformance and surfaced that to the end-user as a different-colored link or other cue that any link might take them partly or fully out of the fediverse and onto the old silo-web.
+Something I love about the Threads product is that it brings these kinds of user expectations to the forefront of discussion and makes them table-stakes of federation with the biggest body of users, incentivizing upgrades to the system and making a Meta-verse within the Fediverse (itself named satirically during the golden age of Zuckerberg's earlier rebrand).
+To put it another way, Threads `.net` is emphatically trying to put the web back in Web
 
 ![screengrab of two bluesky early adopters discussing network effects and reach gains if bluesky federated to threads](/assets/images/underwood_and_niedermeyer_discuss_federating_bluesky_to_threads.png)
 
