@@ -13,7 +13,7 @@ share: true
 related: true
 toc: true
 description: "What should digital editors and news outlets know about the social media landscape post-Twitter?"
-excerpt: "The purpose of this essay is to explain (hopefully not in too pedanty, eye-blurring detail) the technical and architectural tradeoffs in every option on the spectrum from 'self-hosted' social to mega platforms, and hopefully to trouble that linear mental model a bit by introducing the open-data publication as orthogonal to more winner-take-all 'attention economics'."
+excerpt: "The technical and architectural tradeoffs along the spectrum from 'self-hosted' social to mega platforms, and the orthogonal question of AP as an open data language."
 defaults:
   # _posts
   - scope:
