@@ -204,7 +204,7 @@ To put it another way, Threads `.net` is emphatically trying to put the web back
 Newsrooms should consider Threads an interesting alternative to Bluesky, Instagram, or Mastodon, since it kind of straddles the line between Instagram and Mastodon.
 What's more, it gives partial access to readers on both Instagram and Mastodon in different ways, and who knows, maybe some day it'll even partially have touchpoints or bridges with BlueSky as well, or some other networks?
 
-## Oops I Forgot the Mention the Other Big Chunk of the Fediverse
+## Oops I Forgot To Mention Another Big Chunk of the Fediverse
 
 Earlier, I mentioned in passing a broader Fediverse that eschews or ignores the Mastodon API, with its sometimes tendentious interpretation of the ActivityPub data language that bends it to the needs of its inward-facing UX goals.
 (In Mastodon's defense, it has naturally spent the last many years prioritizing the user experience of its loyal and loud users over an academic interoperability with a smaller userbase in the non-Mastodon fediverse, primarily comprised of its exiles and ex-users until Threads came along to legitimate many of its choices.)
