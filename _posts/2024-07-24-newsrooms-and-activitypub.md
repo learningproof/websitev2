@@ -13,8 +13,7 @@ share: true
 related: true
 toc: true
 description: "What should digital editors and news outlets know about the social media post-Twitter?"
-excerpt: "Now the music has stopped and we have to wonder: which elements of that now historically-impossible bundle matter most?
-Pick carefully, especially if you're bringing home any or all of the 'social' functions previously hosted in the communications chicken farms of yesterday."
+excerpt: "The purpose of this essay is to explain (hopefully not in too pedanty, eye-blurring detail) the technical and architectural tradeoffs in every option on the spectrum from "self-hosted" social to mega platforms, and hopefully to trouble that linear mental model a bit by introducing the open-data publication as orthogonal to more winner-take-all "attention economics"."
 defaults:
   # _posts
   - scope:
@@ -33,7 +32,12 @@ News outlets and individual byline-holders alike had evolved whole technological
 In the almost two years since, the Great Exodus many were expecting never quite happened: while Twitter's centrality to news is indisputably diminished, the landscape has gotten more and more fragmented rather than swinging markedly towards a new center of gravity.
 Just as no "winner" has yet emerged, neither has a paradigm shift yet definitively occured towards decentralized and/or federated models, although both seem to be steadily gaining ground and on track to terraforming that landscape by the end of the decade.
 Perhaps two years is an unrealistically short time to expect such results, and the balance of power between the Empires of Network Effects and Modes of Content Production should be studied on a more glacial and geopolitical time-scale.
-But in the meantime, there are some interesting data to look at from the American Press Institute, which shared with the [Online News Association in February 2023](https://journalists.org/resources/beyond-twitter-and-meta-whats-next-for-social-media/) the results of a survey they conducted while the topic was still front-of-mind for online editors everywhere:
+
+In the meantime, however, news outlets need to be planning their next moves and the long-term direction they want to be headed, juggling engagement today against dependency tomorrow, and weighing a "more direct" relationship to readers that they own monetize directly against paying "the reach tax" to be visible where their readers are already looking.
+
+> The purpose of this essay is to explain (hopefully not in too pedanty, eye-blurring detail) the technical and architectural tradeoffs in every option on the spectrum from "self-hosted" social to mega platforms, and hopefully to trouble that linear mental model a bit by introducing the open-data publication as orthogonal to more winner-take-all "attention economics".
+
+We can start by looking at some interesting data from the American Press Institute, which shared with the [Online News Association in February 2023](https://journalists.org/resources/beyond-twitter-and-meta-whats-next-for-social-media/) the results of a survey they conducted while the topic was still front-of-mind for online editors everywhere:
 
 ![a pie chart from the American Press Institute's post-twitter migration survey, feb-2023, showing where news outlets are focusing their attention primarily as a portion of those deprioritizing twitter](/assets/images/american-press-institute--post-twitter-migration-survey--feb-2023.png)
 
