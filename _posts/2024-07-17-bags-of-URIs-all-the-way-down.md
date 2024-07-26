@@ -15,7 +15,7 @@ share: true
 related: true
 toc: true
 description: "What DID method(s) do DAOs need, or deserve?"
-excerpt: "."
+excerpt: "An 'identity' made up of non-repudiable, public claims is the first, necessary, unsufficient step towards legal recognizability."
 defaults:
   # _posts
   - scope:
