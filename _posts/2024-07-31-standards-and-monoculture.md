@@ -29,7 +29,7 @@ Multiformats was publicly and loudly declared ["harmful"](https://mailarchive.ie
 This article will not seek to argue that Multiformats is benign or useful (Aaron Goldman already provided an excellent [point-by-point rebuttal](https://mailarchive.ietf.org/arch/msg/multiformats/w-etaODmYp82mfRa9FU7yo12ia0/) to which I could not add one useful iota).
 Instead, it will first dissect what cultural and ideological assumptions underlie both sides of the argument-- and reformulate what a Multiformats working group at IETF should be good for, before defining a "checklist" and next steps.
 
-If that sounds boring and navel-gazey to you, feel free to jump to the ["Coalition and Collusion"](#coalition-and-collusion) section for next-steps on rephrasing the ask, and building a more public case for in how usefulness can be proven and translated into the specialized jargon and community-form of the IETF specifically, and the software industry more generally.
+If that sounds boring and navel-gazey to you, feel free to jump to the ["Coalition and Collusion"](#coalition-and-collusion) section for next-steps on rephrasing the ask, on a  sounder foundation for proving usefulness to various communities and translated into the specialized jargon and community norms of the IETF.
 
 ## Protocol, Optionality and Translation
 
