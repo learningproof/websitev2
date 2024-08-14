@@ -169,14 +169,15 @@ Downstream and upstream alignment matter more than coalitions of competitors, he
 I asked many long-time IETF-watchers how important it is for there to be "multiple independent implementations" of a thing like Multiformats, and I was told that metric is often overextended to be a general rule of software's independence.
 The re-implementability and maturity of multiple implementations matters more at higher levels, where a single implementation being first to market could tend towards a monopolistic or single-point-of-failure market outcome.
 But this is somewhat off-topic for something so many layers lower down the stack, unlikely to be the "engine" or differentiator of a product or straightforwardly impactful in the market dynamics of internet infrastructure, even in cloud software or distributed computing contexts.
-At this much lower level of complexity, Multiformats is more of a low-level competitor to (and distraction from) CBOR, Protobuf, named-information hash, dataURIs, and similar stable, mature standards, it's less about software independence and more about wheel reinvention and distraction.
+At this much lower level of complexity, Multiformats is more of a low-level competitor to (and distraction from) CBOR, Protobuf, named-information hash, dataURIs, and similar stable, mature standards.
 
 Overlapping subsets of Multiformats functionalities having been implemented in many different programming languages and cloud environments, going all the way to production in a diverse set of product categories and form factors, is a great argument for its _maturity_ as a style of programming.
 Diversity of implementation and context is very useful evidence that Multiformats are an organic aide to interoperability across disparate ecosystems, and this would be useful evidence towards a kind of meta-protocol diversity argument as outlined above.
 However, this diversity is less helpful, maybe even at cross-purposes, on the topic of showing peaceful or constructive coexistence with the load-bearing data languages of IETF's "mainstream" (CBOR, JSON, Protobuf).
 
 Here, the most useful narrative needs to be that there is a community of diverse and independent implementers using Multiformats _instead of the more mainstream choices_ for _equally diverse and independent_ reasons, which need to be captured in documents and submitted.
-Requesting that Multiformats have a place at the table alongside more mainstream options requires documentation of what previously-undocumented (or at least underdocumented and underprioritized) use-cases by those mainstream options.
+Requesting that Multiformats have a place at the table alongside more mainstream options requires documentation of what previously-undocumented (or at least underdocumented and underprioritized) use-cases are worse served by those mainstream options.
+It also requires documenting the equivalences and translatabilities, since IETF blessing two alternative solutions to the same problem can create "translation burdens" for public, heterogenous systems.
 This takes more than a few emails to the mailing list or light "community work":
 this is "field research," in a sense, and best done in the context of community-building, ideally not under the banner of a single company or a company-centric ecosystem.
 
