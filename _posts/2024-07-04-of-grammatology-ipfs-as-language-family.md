@@ -22,7 +22,7 @@ defaults:
 
 ---
 
-People often asking me what the future holds for IPFS, or how much community and/or market demand there is for further development and hardening of IPFS.
+People often ask me what the future holds for IPFS, or how much community and/or market demand there is for further development and hardening of IPFS.
 To which I always ask: _which IPFS are you referring to?_
 
 IPFS for me is not a network, or a toolchain, or even a set of technologies: it's a family tree of ambitious approaches to data.
@@ -30,13 +30,13 @@ An objective (and interoperability-oriented) map of the territory would probably
 As with any family tree (of language, of humans, or of technologies) there has been some serious drift over the years, and specialization, and adaption to different environments.
 And like languages, technologies can also drift into mutual incomprehensibility after enough drift and specialization: dialects becoming languages, translators become necessary, and thus dictionaries and reference grammars becoming necessary for scaling them up.
 
-If the reader will indulge my taxonomic impulses, I'd like to sketch out one possible map of the territory, for organizing backlogs and futures and community governances and whatnot.
+I'd like to sketch out one possible map of the territory, for organizing backlogs and futures and community governances and whatnot.
 
 _I'll do my best to keep it funny and goofy, but this is basically a longform report-out of months of research and conversations and dredging github threads to tease out the shape of interop pasts and futures, so forgive the passionate verbosity._
 
 ## From Principles to Systems Made Up of Components
 
-The broadest and currently-canonical definition of "what IPFS is" can be found in Robin Berjon's "IPFS Principles" document, which defines the particular IPFS flavor of Postel's Law by which arbitrary data is broken up into 1 or more content identifiers and passed around a system between storage providers and consumers.
+The broadest and currently-canonical definition of "what IPFS is" can be found in Robin Berjon's "[IPFS Principles](https://github.com/learningproof/websitev2/blob/main/_posts/2024-07-04-of-grammatology-ipfs-as-language-family.md)" document, which defines the particular IPFS flavor of Postel's Law by which arbitrary data is broken up into 1 or more content identifiers and passed around a system between storage providers and consumers.
 This first-principles approach emphasizes the ambient verifiability, and rightly so--it's quite the game-changer!
 Berjon extracts from the atom of the Content Identifier (hereafter CID) a [micro-specification](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) for determining (in the style of an IETF RFC) what the minimal requirements are for an IPFS system.
 
@@ -49,7 +49,7 @@ For example, Berjon's definitional excursus on the [theoretical CID-verifying JS
 Implementing IPFS over the hostile terrain of the world-wide web requires a lot of components to work together to make CIDs a narrow waist of trust; but are they really working together in one _system_ anymore?
 
 I would argue that Berjon's definition of a CID-based imperium defines the language _family_ of IPFS (let's call it Latin), but it won't settle territorial disputes about where to build walls and where to build bridges (much less those about who pays for them).
-With technologies as with languages, these disputes about where the outer and internal boundaries of IPFS offer lots of incite into the complementary but in some ways competing systems and optimizations within it.
+With technologies as with languages, these disputes about where the outer and internal boundaries of IPFS lie offer lots of insight into the complementary but in some ways competing systems and optimizations within it.
 For this reason, I will intersperse my meandering argument with little explanatory excurses about conceptual edge cases, places where the common language broke down and unmet needs for translation sit uncomfortably in the common backlog.
 Each of these contribute to the broader argument about federation and decentralized progress, but in their own right, each excursis is a profile of a distinct language that needs just a bit of boundary-setting and specification to mature, to stabilize, to grow... and maybe even to find a bit of Language-Market Fit!
 
@@ -277,7 +277,7 @@ These two distinct kinds of networking operations used very similar mechanisms, 
 Decoupling them, and allowing them to be configured separately, might be useful, and necessary for making the other 3 layers more independent and swappable.
 
 For example, the kind of perimeters a system already needs might make `libp2p` and/or Amino optimizations (with all their dependencies and abstractions in tow) a bad fit for some use-cases.
-For example, systems that, by design, operate on a single network or cloud provider, or systems that already have authorization deeply woven into them, might not near either.
+For example, systems that, by design, operate on a single network or cloud provider, or systems that already have authorization deeply woven into them, might not need either.
 
 Little work has been done to specify this layer, partly because interoperability at this layer tends to happen as an ad hoc matter, if at all.
 It might be necessary if evolution continues on non-Amino systems that might develop a need to federate _to one another_.
@@ -311,7 +311,7 @@ There are already [three trustless gateway "modes"](https://specs.ipfs.tech/http
 Reading between the lines a little, it is obvious that these three distinct modes correspond to radically different assumptions about the architecture in which those modes would be useful.
 
 Just a little specification about what a trustless "mode" can be (i.e., do they always map `1:1` to an HTTP header? what gateway or client behaviors MUST and MAY they specify?) would go a long way towards making Trusted Gateways powerful enablers of reliable and mature translation.
-If these modes were a little more detailed (i.e. if they profiles of an architectural component rather than just modes a trustless gateway component can be configured to run), we might get a set of defaults or pre-configurations for gateways that are ready-to-go, just-add-water components of a system that speaks CID at its edges... while allowing more freedom to diverge within their system.
+If these modes were a little more detailed (i.e. if they were profiles of an architectural component rather than just modes a trustless gateway component can be configured to run), we might get a set of defaults or pre-configurations for gateways that are ready-to-go, just-add-water components of a system that speaks CID at its edges... while allowing more freedom to diverge within their system.
 
 ## Excursus: Segmented NFT Example System
 
@@ -320,8 +320,8 @@ Think, for example, of a system that only generates CIDs at, say, the minting pr
 Once that corpus of images and metadata has been "CIDified" and each NFT has the right URIs encoded in it, this static SQL table of a system switches gears, and suddenly each of those CIDs needs to be available performantly and globally over conventional web technologies.
 
 In this case, how the subsystem involved in generating CIDs bootstraps its networks and passing along its outputs to a more conventional publication system is very different from the network profile of the "mini-gateways".
-The first system might need optimize for privacy, confidentially, obscurity, or even security-by-obscurity, hiding from attackers behind cryptic networking mechanisms.
-The latter, on the other had, has a fairly conventional CDN-like networking and performance profile, which might benefit from knowing literally nothing about the former system, lest it be compromised somewhere in its many attack surfaces.
+The first system might need to optimize for privacy, confidentially, obscurity, or even security-by-obscurity, hiding from attackers behind cryptic networking mechanisms.
+The latter, on the other hand, has a fairly conventional CDN-like networking and performance profile, which might benefit from knowing literally nothing about the former system, lest it be compromised somewhere in its many attack surfaces.
 
 This latter system, which I'm cheekily calling a "mini-gateway," might be thought of as an "output only", non-IPFS subsystem of a greater IPFS configuration.
 This whole output-only system can be handed a bunch of URLs that either _are_ or _contain_ CIDs and referents for each representing various `content-type`s and be completely "unaware" of all the IPFS that generated this mapping.
