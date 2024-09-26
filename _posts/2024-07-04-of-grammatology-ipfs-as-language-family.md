@@ -36,7 +36,7 @@ _I'll do my best to keep it funny and goofy, but this is basically a longform re
 
 ## From Principles to Systems Made Up of Components
 
-The broadest and currently-canonical definition of "what IPFS is" can be found in Robin Berjon's "[IPFS Principles](https://github.com/learningproof/websitev2/blob/main/_posts/2024-07-04-of-grammatology-ipfs-as-language-family.md)" document, which defines the particular IPFS flavor of Postel's Law by which arbitrary data is broken up into 1 or more content identifiers and passed around a system between storage providers and consumers.
+The broadest and currently-canonical definition of "what IPFS is" can be found in Robin Berjon's "[IPFS Principles](https://specs.ipfs.tech/architecture/principles/)" document, which defines the particular IPFS flavor of Postel's Law by which arbitrary data is broken up into 1 or more content identifiers and passed around a system between storage providers and consumers.
 This first-principles approach emphasizes the ambient verifiability, and rightly so--it's quite the game-changer!
 Berjon extracts from the atom of the Content Identifier (hereafter CID) a [micro-specification](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) for determining (in the style of an IETF RFC) what the minimal requirements are for an IPFS system.
 
