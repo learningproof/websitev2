@@ -24,6 +24,8 @@ defaults:
 
 ---
 
+[*Note 14 April 2025: an updated version of this essay has been released in DAOstar's research reports series [here](https://daostar.org/reports/daoid.pdf) on DAOstar's website*]
+
 ## Context
 
 After building and widely deploying Decentralized Autonomous Organization (hereafter "DAO") [toolchain for record-keeping](https://github.com/metagov/daostar?tab=readme-ov-file#introduction) based on the Ethereum standard [ERC-4824][], DAOStar finds itself a little [stumped](https://github.com/metagov/daostar/issues/213) on how to "v2" its contingent "identity system".
