@@ -319,6 +319,10 @@ Having studied the issue for a long time (and having previously received a grant
 
 In the next installment, I'll apply this rubric in detail to Atproto and Activitypub and compare the two "report cards" to imagine productive collaborations and next steps worth investing in.
 
+## Acknowledgements
+
+Will be enumerated at the end of part 2.
+
 ## Endnotes
 
 [^1]: [McNeil's Lurking](https://popfeed.social/book/9780374194338) is maybe my favorite but this essay is supposed to be about invisible economics so probably [Tim Wu's Attention Merchants](https://popfeed.social/book/9781524709242) would be more directly pertinent, or [Max Fisher's Chaos Machine](https://popfeed.social/book/9780316703314)
