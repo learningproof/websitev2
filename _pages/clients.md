@@ -32,4 +32,4 @@ og_image: "/assets/images/banner2.jpg"
 
 - [SocialWeb.coop](https://socialweb.coop) - A loose coöperative of technologists working on social-web technologies, primarily ActivityPub and Fediverse federation issues
 - [Webarch.coop](https://webarch.coop) - Git, CI and web design infrastructure support offered on a coöp-to-coöp/membership basis
-- [Taqanu](https://taqanu.com/) - identity and financial inclusion research org and identity platform; incubated [KYC.DAO](https://kycdao.xyz) and related projects
+- [Taqanu](https://taqanu.com/) - identity and financial inclusion research org and identity platform; incubated [KYC.DAO](https://kycdao.xyz) and the [agent community](https://agentcommunity.org/)
