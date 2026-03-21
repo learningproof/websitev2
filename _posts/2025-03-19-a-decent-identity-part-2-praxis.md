@@ -1,5 +1,5 @@
 ---
-title: "A Decent Identity Part 2: Theory"
+title: "A Decent Identity Part 2: Praxis"
 categories: 
   - blog
   - activitypub
