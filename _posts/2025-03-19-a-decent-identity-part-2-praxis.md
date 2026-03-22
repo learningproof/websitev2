@@ -35,17 +35,21 @@ In this piece, I will just try applying that rubric tactically to the short- and
 ### The Rubric
 
 1. **Portability at multiple layers**, not just users credibly exiting apps or swapping out infrastructural dependencies within one otherwise-invariant platform:
-    A. *Apps and services* can also join or leave zero or more *platforms* (i.e., "userbases", moderation perimeters, literal or figurative jurisdictions) at any time and still use interoperable identifiers for their users
-    B. Apps can add or subtract *integrations and infrastructure* over time, without trapping users or impeding their own exitability.
-    C. Platforms can federate or defederate from one another at any time, fork or schism themselves, and enter or exit multiple protocols at any time
+    * A. *Apps and services* can also join or leave zero or more *platforms* (i.e., "userbases", moderation perimeters, literal or figurative jurisdictions) at any time and still use interoperable identifiers for their users
+    * B. Apps can add or subtract *integrations and infrastructure* over time, without trapping users or impeding their own exitability.
+    * C. Platforms can federate or defederate from one another at any time, fork or schism themselves, and enter or exit multiple protocols at any time
+    * Jump to [Atproto](#portability-atprotocol) or [Activitypub](#portability-activitypub) diagnosis
 2. **Transparent platform governance** (at least of the identity layer)
-    A. This includes *spam-protection* and *moderation*, but these two mechanisms have to be distinct (if not firewalled) to be credible
-    B. *Platforms and sub-platform networks* need distinct governance, even if the stakes are lower.
+    * A. This includes *spam-protection* and *moderation*, but these two mechanisms have to be distinct (if not firewalled) to be credible
+    * B. *Platforms and sub-platform networks* need distinct governance, even if the stakes are lower.
+    * Jump to [Atproto](#protocol-governance-atprotocol) or [Activitypub](#protocol-governance-activitypub) diagnosis
 3. **Transparent protocol governance**, ideally in public
-    A. SDOs are good but not the silver bullet people expect, in my extensive first-hand professional experience. Community venues can make up for less transparency with more accessibility and participation and less expensive divisions of labor.
+    * A. SDOs are good but not the silver bullet people expect, in my extensive first-hand professional experience. Community venues can make up for less transparency with more accessibility and participation and less expensive divisions of labor.
+    * Jump to [Atproto](#protocol-governance-atprotocol) or [Activitypub](#protocol-governance-activitypub) diagnosis
 4. **Open-source and openly-governed APIs** break the architecture into layers that can be run by anyone, and ideally support competition at each layer.
-    A. Competition keeps margins low; ideally, no part of the architecture can get so expensive to run that it becomes a chokepoint/tollroad to the rest of the system
-    B. DIDs and PDSs in particular need to stay in the "commodity pricing" zone, which is one of the hardest things to ensure over time (see Bitcoin-based, or any mainnet-based DID methods priced out by their own upstream blockspace economics).
+    * A. Competition keeps margins low; ideally, no part of the architecture can get so expensive to run that it becomes a chokepoint/tollroad to the rest of the system
+    * B. DIDs and PDSs in particular need to stay in the "commodity pricing" zone, which is one of the hardest things to ensure over time (see Bitcoin-based, or any mainnet-based DID methods priced out by their own upstream blockspace economics).
+    * Jump to [Atproto](#scaling-mechanics-atprotocol) or [Activitypub](#scaling-mechanics-activitypub) diagnosis
 
 ## Diagnosis: ATProtocol
 
@@ -72,42 +76,50 @@ On top of this identity layer, all the other infrastructure is admirably thin-sl
 
 ### Portability: Atprotocol
 
-1.) User portability between PDSs (that are both known to plc.directory) is going great! Many other kinds of portability is still unspecified behavior, though: portability of off-protocol data or permissioned on-protocol data, some corner-cases around verifying signatures on keys rotated away, CDN/blob mechanics are a little glitchy across PDS migrations, how to handle historical DID docs and historical verification is a little underhardened, etc.
+*(Refresh your memory of section 1 in the [rubric](#the-rubric))*
 
-1A.) How *apps* secede from plc.directory and join some other universe of DIDs is undefined. How to migrate or tombstone or re-sign data across directory boundaries is also undefined.
+User portability between PDSs (that are both known to plc.directory) is going great! Many other kinds of portability is still unspecified behavior, though: portability of off-protocol data or permissioned on-protocol data, some corner-cases around verifying signatures on keys rotated away, CDN/blob mechanics are a little glitchy across PDS migrations, how to handle historical DID docs and historical verification is a little underhardened, etc.
 
-1B.) The lexicon system is pretty good for this, modulo the interop issues created by unregistered lexicon use or lexicon usage that diverges from the published version (both failures which can be gracefully handled by defensively-designed apps).
-    
-1C.) This part ATP does pretty well; it's easy to "switch off" ATP since users "publish" to ATP "mainnet" by *leaving content in an outbox on a public endpoint*, which can just be shut off (without, for example, any other usage of that server's DIDs being interrupted-- DIDs keep DIDing if relays stop syncing them). No real blockers to entering or exiting communication via other protocols and networks seem to exist.
+How *apps* secede from plc.directory and join some other universe of DIDs is undefined. How to migrate or tombstone or re-sign data across directory boundaries is also undefined.
+
+The lexicon system is pretty good for this, modulo the interop issues created by unregistered lexicon use or lexicon usage that diverges from the published version (both failures which can be gracefully handled by defensively-designed apps).
+
+This part ATP does pretty well; it's easy to "switch off" ATP since users "publish" to ATP "mainnet" by *leaving content in an outbox on a public endpoint*, which can just be shut off (without, for example, any other usage of that server's DIDs being interrupted-- DIDs keep DIDing if relays stop syncing them). No real blockers to entering or exiting communication via other protocols and networks seem to exist.
 
 ### Identity Governance: Atprotocol
 
-2.) The "Swiss entity" might help, or be mere kabuki/kayfabe; it all comes down to who has decision-power there, and what scope/powers they have over the system.
+*(Refresh your memory of section 2 in the [rubric](#the-rubric))*
 
-2A.) Spam-filtering is, as one might predict in a permissionless and unauthenticated PDS<>relay system, a major issue, with thousands of PDSs seemingly being stood up just to grief the plc.directory[^6] or waste its resources[^7]. Even in its current placeholder form, the spam filtering (excluding misbehaving PDSs from DID directory/ies) happens at a lower [content-agnostic] level than [lexicon-specific and semantic, i.e. platform-specific] moderation, but this has the side-effect of fusing together into one platform the spam-filtered universe of known PDSs (minus a PDS blocklist) and the universe of DIDs moderated to bsky.app's standards.
+The "Swiss entity" might help, or be mere kabuki/kayfabe; it all comes down to who has decision-power there, and what scope/powers they have over the system.
+
+Spam-filtering is, as one might predict in a permissionless and unauthenticated PDS<>relay system, a major issue, with thousands of PDSs seemingly being stood up just to grief the plc.directory[^6] or waste its resources[^7]. Even in its current placeholder form, the spam filtering (excluding misbehaving PDSs from DID directory/ies) happens at a lower [content-agnostic] level than [lexicon-specific and semantic, i.e. platform-specific] moderation, but this has the side-effect of fusing together into one platform the spam-filtered universe of known PDSs (minus a PDS blocklist) and the universe of DIDs moderated to bsky.app's standards.
     
-2B.) Platforms and networks are currently unnamed, invisible units of measure in ATProtocol; Rudy Fraser's insistence on referring to "our community" instead of using a technical boundary or abstraction (i.e. "our system, our network", etc) helpfully foregrounds this and forces this issue.
+Platforms and networks are currently unnamed, invisible units of measure in ATProtocol; Rudy Fraser's insistence on referring to "our community" instead of using a technical boundary or abstraction (i.e. "our system, our network", etc) helpfully foregrounds this and forces this issue.
 
-2B1.) The main issue I see is that the "composable" moderation system as currently implemented confuses and obscures this issue and minimizes the need for moderation-boundaries to map to governance/branding/community boundaries. BlackSky's, EuroSky's, and NorthSky's attempts to build equal-but-independent (rather than merely additive) moderation loom on the horizon as negotiations without a clear venue or language.
+The main issue I see is that the "composable" moderation system as currently implemented confuses and obscures this issue and minimizes the need for moderation-boundaries to map to governance/branding/community boundaries. BlackSky's, EuroSky's, and NorthSky's attempts to build equal-but-independent (rather than merely additive) moderation loom on the horizon as negotiations without a clear venue or language.
 
-2B2.) BlackSky is pioneering/prototyping not just additive moderation but also overt _overriding_ of baseline moderation actions from the bluesky platform being pushed (unidirectionally) into their own. This could force some explicit rule-setting on what it means to ignore, e.g., a Bluesky-wide "ban" label, but there is a chicken-and-egg problem there, given that this hypothetical rule-setting currently has no natural home or venue (or authority).
+BlackSky is pioneering/prototyping not just additive moderation but also overt _overriding_ of baseline moderation actions from the bluesky platform being pushed (unidirectionally) into their own. This could force some explicit rule-setting on what it means to ignore, e.g., a Bluesky-wide "ban" label, but there is a chicken-and-egg problem there, given that this hypothetical rule-setting currently has no natural home or venue (or authority).
 
 ### Protocol Governance: Atprotocol
 
-3.) Atproto's strategy for standardization at IETF is commendable in its scope and structure, in that it starts from the core data-publication protocol (the sync protocol used to build PDS contents into an event stream/"firehose" and from there a global archive/DAG), with the potential to standardize higher and lower layers over time. Handing over change control of an already-built, in-production system to IETF inherently risks breakage. This risk is usually managed at the working-group scope level, thus the protracted and ongoing scoping process debating "invariants" (assumptions about end-users and lower layers that a working group needs to just take as given, e.g., the stability, enumerability, and resolvability of identities and/or identifiers). The exact scope (and which "invariants" can be protected from redesign-by-committee) is still being negotiated at time of press, so it's necessarily a little TBD how the governance at IETF of the data protocol interacts with the lower-level identity primitives governed... somewhere else?
+*(Refresh your memory of section 3 in the [rubric](#the-rubric))*
 
-3i.) I would note here that my repeated calls on the mailing list for the invariants and identity assumptions to be made more explicit are, if anything, informed by my years of trying to debate data-sync and application-layer semantics in ActivityPub _without_ enough consensus on identity-layer assumptions. See the [corresponding section](#protocol-governance-activitypub) for context.
-    
-3ii.) As mentioned above, the "moderation-layer" and platform dynamics at the identity layer are currently underspecified, almost unnamed and unrecognized, although I personally argue it would be a category error to try to govern any of these in any SDO (particularly at IETF!), and I would push back on any attempt to push those into scope at IETF. First steps would be to name the problems and get some kind of consensus in the developer community on what the governable questions even are; this will be a long process, and putting the cart before the jackass would be disastrous.
+Atproto's strategy for standardization at IETF is commendable in its scope and structure, in that it starts from the core data-publication protocol (the sync protocol used to build PDS contents into an event stream/"firehose" and from there a global archive/DAG), with the potential to standardize higher and lower layers over time. Handing over change control of an already-built, in-production system to IETF inherently risks breakage. This risk is usually managed at the working-group scope level, thus the protracted and ongoing scoping process debating "invariants" (assumptions about end-users and lower layers that a working group needs to just take as given, e.g., the stability, enumerability, and resolvability of identities and/or identifiers). The exact scope (and which "invariants" can be protected from redesign-by-committee) is still being negotiated at time of press, so it's necessarily a little TBD how the governance at IETF of the data protocol interacts with the lower-level identity primitives governed... somewhere else?
+
+I would note here that my repeated calls on the mailing list for the invariants and identity assumptions to be made more explicit are, if anything, informed by my years of trying to debate data-sync and application-layer semantics in ActivityPub _without_ enough consensus on identity-layer assumptions. See the [corresponding section](#protocol-governance-activitypub) for context.
+
+As mentioned above, the "moderation-layer" and platform dynamics at the identity layer are currently underspecified, almost unnamed and unrecognized, although I personally argue it would be a category error to try to govern any of these in any SDO (particularly at IETF!), and I would push back on any attempt to push those into scope at IETF. First steps would be to name the problems and get some kind of consensus in the developer community on what the governable questions even are; this will be a long process, and putting the cart before the jackass would be disastrous.
 
 ### Scaling Mechanics: Atprotocol
 
-4.) I added this category to the rubric of success less because there is any actionable thinking to be done today on any protocol, and more because I want to look smart years from now when this is the next Boss in the never-ending platform game that is protocol governance.
+*(Refresh your memory of section 4 in the [rubric](#the-rubric))*
+
+I added this category to the rubric of success less because there is any actionable thinking to be done today on any protocol, and more because I want to look smart years from now when this is the next Boss in the never-ending platform game that is protocol governance.
 Atproto got off the ground with relatively good unit economics and economies of scale, constrained a little by the assumption that it would be years until >5% of PDSs would be paid for by anyone other the protocol's current loss-leading underwriter. Sadly, this 5% threshold still looking years off, but the basic cost structure still puts the vast majority of growing pains in moderation, the large-scale appview, and directory-wide cache/relaying infrastructure. This last one, though exponentially more expensive to operate on commodity cloud infrastructure as the network grows, is at least the easiest to share/fractionalize and govern anti-extractively (by, e.g., running it as a platform coöperative).
 
-4i.) One minor qualm I will mention here is that per-user, user-managed rotation keys (whether [device-bound](https://bsky.app/profile/why.bsky.team/post/3mfhon6ss4k2g) or "paper keys" à la ethereum community) were defined in the initial protocol documents but left out of the initial reference implementation, and to date have only been added to un-maintained, [non-reference implementations](https://bsky.app/profile/angrydutchman.peedee.es/post/3lz5dp4vnbk27) of the PDS and identity tooling. Retrofitting these kinds of capabilities post-facto can be quite costly and disruptive, and may need to wait for a protocol upgrade/"major version."
+One minor qualm I will mention here is that per-user, user-managed rotation keys (whether [device-bound](https://bsky.app/profile/why.bsky.team/post/3mfhon6ss4k2g) or "paper keys" à la ethereum community) were defined in the initial protocol documents but left out of the initial reference implementation, and to date have only been added to un-maintained, [non-reference implementations](https://bsky.app/profile/angrydutchman.peedee.es/post/3lz5dp4vnbk27) of the PDS and identity tooling. Retrofitting these kinds of capabilities post-facto can be quite costly and disruptive, and may need to wait for a protocol upgrade/"major version."
 
-4ii.) I do wonder how permissioned and/or private data (or more complex key-sharing/-derivation mechanics) will become a cost center, although honestly I don't mind if PDSs have to charge (and compete on pricing and/or features) to allow a realistic number of private/permissioned-data apps to be used by each user.
+I do wonder how permissioned and/or private data (or more complex key-sharing/-derivation mechanics) will become a cost center, although honestly I don't mind if PDSs have to charge (and compete on pricing and/or features) to allow a realistic number of private/permissioned-data apps to be used by each user.
 
 ## Diagnosis: ActivityPub
 
@@ -200,6 +212,8 @@ It is, after all, a whole lot of work to retrofit onto existing systems.
 
 ### Portability: ActivityPub
 
+*(Refresh your memory of section 1 in the [rubric](#the-rubric))*
+
 Currently, none of this is looking great, and I'm not even sure what a realistic path to progress would look like.
 The STA-sponsored work mentioned above on portability was meant to be a starting point for further dialogue and counterproposals, but even the very real competition from Atproto's portability mechanisms and guarantees wasn't enough to motivate painful cross-implementation co-design and refactoring work.
 *It's really a vitamin and every AP implementation has plenty of urgent reasons to take painkillers or add userbase-boosting features!*
@@ -218,6 +232,8 @@ In this, the next steps I propose for ActivityPub and for ATProtocol aren't even
 
 ### Identity Governance: ActivityPub
 
+*(Refresh your memory of section 2 in the [rubric](#the-rubric))*
+
 Sadly, this category is also not going well, despite the tireless efforts of many (but mostly [Emelia Smith](https://bsky.app/profile/thisismissem.social) and [Darius Kazemi](https://friend.camp/@darius)) to make the Trust and Safety Task Force of the Social Web Community Group a central repository for this collective feature backlog, compliance planning, and technical debts.
 The work [Roost.tools](https://roost.tools) is doing to open-source reusable dashboards and plumbing for event-sourced (and variously-automatable) moderation pipelines is very promising, and probably needs to be adapted to the Mastodon codebase first before MAEPs can be written to figure out how to adapt it to other (adjacent/interoperable) ones.
 More generally, though, the conversation about spam-protection and uniform/traceable/shared moderation records has to advance a lot, as the current paradigm in so much of the Fediverse seems to be a kind of emphatic yeoman insistence on manual processes and total liability for each server.
@@ -233,6 +249,8 @@ Information on the system is still a little scarce years after the NLNet grant t
 It would appear to have spam and moderation plug-ins, although it remains to be seen how this could converge with, say, Roost's model, or that of [IFTAS](https://iftas.org) or with non-Mastodon-API implementations.
 
 ### Protocol Governance: ActivityPub
+
+*(Refresh your memory of section 3 in the [rubric](#the-rubric))*
 
 The ActivityPub community has always had a fairly disjoint conversation about standardization and "protocol design", with a surprising number of implementations just categorically disinterested, hostile, or only interested in participating if they have a reasonable chance of dislodging JSON-LD from the protocol.
 (I wish that last bit were a joke.)
@@ -252,6 +270,8 @@ The closest we have is probably the conversation about OAuth, which is a buildin
 Conversations about capability certificates, serverless/local-first authorization, non-HTTPS systems, etc. are nowhere to be seen, and this makes me insistent that harmonizing around, say, one way of using OAuth that covers 90% of current usecases well enough to be specified should be defined as _one_ Authorization Profile, not _the_ Authorization Profile, even if it is the only 2026 profile.
 
 ### Scaling Mechanics: ActivityPub
+
+*(Refresh your memory of section 1 in the [rubric](#the-rubric))*
 
 This point here is almost entirely theoretical at present, because as I outlined above, there is no identity layer (commodity-priced or otherwise) in today's Fediverse.
 I do think, however, that trying to support new use-cases (like cross-implementation end-to-end encryption, or oblivous-server C2S) will drive interest in something like a DID method (or some profile of multiple DID methods) and something like a PDS (or a shared API across more than one).
