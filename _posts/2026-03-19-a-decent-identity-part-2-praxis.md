@@ -25,7 +25,7 @@ defaults:
 
 ## Context Window
 
-In the [previous, more philosophical essay](../a-decent-identity-part-1-theory/), I laid out a definition of success for decent social computing, then I worked backwards to define how an "identity system" for that definition of success would work:
+In the [previous, more philosophical essay](./2026-03-12-a-decent-identity-part-1-theory/), I laid out a definition of success for decent social computing, then I worked backwards to define how an "identity system" for that definition of success would work:
 
 > What properties would an optimal “identity system” have to enable decentralized social computing ecosystems to flourish using it as infrastructure, i.e., what capabilities most maximize user agency and ecosystem resilience?
 
@@ -59,7 +59,7 @@ I don't even think it would take too much luck, money, and regulatory tailwinds 
 That is not status quo, however: viewed through the lens above, it is still shaped like a platform, running a fairly traditional trust & safety playbook over an identity system literally centralized in a single source-of-truth registry of all actors.
 
 In its current cocoon-like structure, it is somewhat amorphous qua platform: it does not seem clear (to me or to anyone else) where it will extract its primary rents to repay its investors.
-It could end up profitably functioning as any of the kinds of platforms hypothesized in [the previous piece](../a-decent-identity-part-1-theory/#quagmire-6-i-know-a-platform-when-i-see-it)!
+It could end up profitably functioning as any of the kinds of platforms hypothesized in [the previous piece](./2026-03-12-a-decent-identity-part-1-theory/#quagmire-6-i-know-a-platform-when-i-see-it)!
 The identity system, hard-coded and bound to a single registry (under TBD governance) in Switzerland, is a good metaphor for the current state:
 **Groundwork** has been laid for more public governance that could go in a multi-platform and/or multistakeholder **direction**, but nothing very concrete has been committed to.
 It crucially remains to be seen how antagonistic, how opinionated, or _how independent_ a significant ATP platform could be and still be invited to the table to govern the DID method/registry system.
@@ -167,6 +167,9 @@ Pixelfed, PeerTube, Misskey, Friendica and Pleroma are probably the closest, alt
 ### Sidebar: Why doesn't ActivityPub have a DID method?
 
 If ActivityPub Actor documents are basically already DID documents, why hasn't anyone proposed a *did:mastodon*, or a *did:ap*?
+DIDs were very much "in play" during the process of writing and editing the ActivityPub specification by committee, and I personally got my first introduction to the ActivityPub developer committee at the first and last ActivityPub developer conference in Prague, 2019, scheduled to coincide with [a DID conference I was attending](https://github.com/WebOfTrustInfo/rwot9-prague/blob/9ef179d8e98268e1fcdae4fda66cb5da05968406/topics-and-advance-readings/Supreme%20Court%20for%20decent%20and%20interop.md).
+Even [years before that](https://github.com/WebOfTrustInfo/rwot5-boston/blob/master/final-documents/activitypub-decentralized-distributed.md), the basic outlines of how client-side signing and user-managed keys could make client-to-server a reality using one or more DID methods or even just a remix of the building blocks of DIDs.
+
 Well, a few people have proposed a method, most notably `@silverpill`, steward of the Fediverse Enhancement Proposal process and technical lead for the [mithra](https://codeberg.org/silverpill/mitra#readme) implementation, which also uses W3C Verifiable-Credential/Data-Integrity primitives for [per-Activity signing](https://codeberg.org/fediverse/fep/src/branch/main/fep/ae97/fep-ae97.md) and [client-side rather than PDS-side/server-side signing](https://codeberg.org/fediverse/fep/src/branch/main/fep/c390/fep-c390.md)).
 The collective-action problem is severe, however, and even if there were ideological, economic, and architectural alignment among all major AP implementations, it would still be a nightmarish process to lay tracks (or in this case, Authorization profiles, Authentication guidelines, and user stories) in front of a moving train!
 
