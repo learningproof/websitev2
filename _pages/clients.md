@@ -17,7 +17,7 @@ og_image: "/assets/images/banner2.jpg"
 
 ### Past Clients
 
-- [Protocol Labs](https://specs.ipfs.tech/) - Working on internal specifications around IPLD and IPFS technologics, designing and administering community grants, and specification governance for low-level [AT protocol tooling](https://dasl.ing/drisl.html)
+- [Protocol Labs](https://ipfs.tech/) - Working on internal specifications around IPLD and IPFS technologics, designing and administering community grants, and specification governance for low-level [AT protocol tooling](https://dasl.ing/drisl.html)
 - [Centre.io](https://www.circle.com/blog/ushering-in-the-next-chapter-for-usdc) Pushing forward the [Verite.io prototype](https://verite.id) for compliant Decentralized Finance and miscellaneous technical standardization for USDC project, as well as research on SRO/governance around payments networks
 - [WalletConnect](https://docs.walletconnect.com/) - Advising on standards strategy and product strategy for building a multi-chain ecosystem around the WalletConnect network, including very early work on the MLS end-to-end encryption protocol for groups and passkeys for "smart accounts"
 - [Spruce Systems](https://spruceid.com/) Miscellaneous decentralized-identity standards and community consulting, as well as product design and community cat-hearding for Spruce's suite of open-source projects, both current ([Credible](https://github.com/spruceid/credible) wallet, [DIDKit](https://github.com/spruceid/didkit)) and future ([Rebase](https://www.w3.org/community/rebase/))
