@@ -35,7 +35,7 @@ At a high level, let's say the purpose of this treatise is to answer one questio
 
 > What properties would an optimal "identity system" have to enable decentralized social computing ecosystems to flourish using it as infrastructure, i.e., what capabilities most maximize user agency and ecosystem resilience?
 
-If you're the type to prefer actionable insights to treatises, you might want to skip ahead to [part 2](../2026-03-19-a-decent-identity-part-2-praxis/) where I propose specific short- and medium-term goals for achieving these properties in Atproto and ActivityPub.
+If you're the type to prefer actionable insights to treatises, you might want to skip ahead to [part 2](../a-decent-identity-part-2-praxis/) where I propose specific short- and medium-term goals for achieving these properties in Atproto and ActivityPub.
 If you're not, bear with me while I start at the very beginning, earlier perhaps than you might be used to technological essays beginning, "before the first principles" as it were.
 Many of the terms used in that question above might sound obnoxiously undefinable, if you're a technologist or a journalist, hell, even if you're a regulator or community organizer specializing in user agency maximization and ecosystem health.
 That sentence is honestly hard for even me to parse, and it could double as a summary of my entire career.
@@ -319,7 +319,7 @@ Having studied the issue for a long time (and having previously received a grant
     A. Competition keeps margins low; ideally, no part of the architecture can get so expensive to run that it becomes a chokepoint/tollroad to the rest of the system
     B. DIDs and PDSs in particular need to stay in the "commodity pricing" zone, which is one of the hardest things to ensure over time (see Bitcoin-based, or any mainnet-based DID methods priced out by their own upstream blockspace economics).
 
-In the [next installment](../2026-03-19-a-decent-identity-part-2-praxis/), I'll apply this rubric in detail to Atproto and Activitypub and compare the two "report cards" to imagine productive collaborations and next steps worth investing in.
+In the [next installment](../a-decent-identity-part-2-praxis/), I'll apply this rubric in detail to Atproto and Activitypub and compare the two "report cards" to imagine productive collaborations and next steps worth investing in.
 
 ## Acknowledgements
 
