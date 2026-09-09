@@ -34,9 +34,9 @@ What's more, these additional capabilities can be integrated in ways that are ba
 
 > Unbundling identifiers' various functions in a decentralized data protocol (discovery, location, integrity, identity) is a necessary first step to reconsider entrenched habits and evaluate new designs, fitness for a given user story, and interoperability risks objectively. 
 
-Identifier choice is, annoyingly, not a protocol question at all, but an interoperability and thus a profiling question.
-Using HTTPS URLs exclusively is a choice an implementation can make, but one that limits interoperability and constrains what subset of the network they will see to those identifiers (a sharply-constraining profiling decision, as it were).
-Implementations trying to achieve better data longevity and support happier, more portable users need to adapt new profiles of the protocol to do so, and new identifier types.
+Identifier choice is, annoyingly, not a protocol question at all, but an extension-interoperability and thus a profiling question.
+Using HTTPS URLs exclusively is a choice an implementation can make, but one that limits interoperability and constrains what subset of the network they will see to those identifiers (a sharply-constraining profiling decision, as it were); conversely, using novel or niche URIs extends the protocol powerfully, at the expense of which other implementations will see (or properly render and handle) their Activities, per their own security stances.
+Implementations trying to achieve better data longevity and support happier, more portable users may be motivated to extend and adapt new profiles of the protocol to do so, including support for new identifier types.
 What follows walks the reader through various identifier options for various use-cases, with an eye to complexity and interoperability trade-offs primarily.
 Backwards-compatibility is left as an exercise for the reader, to be addressed in more specific future essays and/or FEPs.
 
