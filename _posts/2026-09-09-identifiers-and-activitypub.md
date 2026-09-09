@@ -240,12 +240,32 @@ A more exhaustive list would take more time to prepare than this whole article t
 
 ## References
 
-[didwebvh-ts]: https://github.com/decentralized-identity/didwebvh-ts
+* [caddy]
+* [dead internet]
+* [DIDs]
+* [DID URLs]
+* [didwebvh-ts]
+* [fedify]
+* [FEP-cd47]
+* [FEP-73cd]
+* [FEP-e3e9]
+* [hashlink]
+* [media-upload]
+* [nih uri]
+* [prototyping exercise]
+* [RFC 6920]
+* [RFC 9562]
+* [sri]
+* [TIDs]
+* [UUIDv5]
+* [vcdi]
+* [webvh]
+
 [caddy]: https://github.com/caddyserver/caddy
 [dead internet]: https://en.wikipedia.org/wiki/Dead_Internet_theory
 [DIDs]: https://w3c.github.io/did/
 [DID URLs]: https://www.w3.org/TR/did/upcoming/#did-url-syntax
-[UUIDv5]: https://www.rfc-editor.org/info/rfc9562/#section-5.5
+[didwebvh-ts]: https://github.com/decentralized-identity/didwebvh-ts
 [fedify]: https://github.com/fedify-dev/fedify
 [FEP-cd47]: https://fediverse.codeberg.page/fep/fep/cd47/
 [FEP-73cd]: https://fediverse.codeberg.page/fep/fep/73cd/
@@ -258,5 +278,6 @@ A more exhaustive list would take more time to prepare than this whole article t
 [RFC 9562]: https://www.rfc-editor.org/info/rfc9562/#section-5.5
 [sri]: https://www.w3.org/TR/sri-2/
 [TIDs]: https://learningproof.github.io/tid-i-d/draft-goldman-tid.html
+[UUIDv5]: https://www.rfc-editor.org/info/rfc9562/#section-5.5
 [vcdi]: https://www.w3.org/TR/vc-data-integrity/
 [webvh]: https://didwebvh.info/
