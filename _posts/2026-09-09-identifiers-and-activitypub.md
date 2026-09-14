@@ -226,23 +226,33 @@ There will always be other networks and other protocols, but ours gets more powe
 Note: these are the variously content-addressing-based identifier schemes I'm most familiar with, from my time working for the IPFS Foundation and Decentralized Identity Foundation.
 A more exhaustive list would take more time to prepare than this whole article took to write, and while I might have missed one or two good options for ActivityPub, I stand behind these as the bulk of a list of options worth considering.
 
+General-purpose Identifier Schemes (esp for Attachments/media)
+
 |type|URI scheme|resolution+deref algorithms|normref|pros|cons|
 |---|---|---|---|---|---|
-|ni://|yes, IANA-registered, simple /.well-known/ system|HTTPS GET on authority-hint with /.well-known/ query on known caching servers as fallback|IETF [RFC 6920]|low complexity, zero-dep implementable|limited range of hash functions|
-|ipfs://|yes, but very complex and likely needs to be profiled via regexp to reduce security surface for AP use cases|many round-trips, some unknowable timing|no hope of normref|"kitchen-sink", can handle many different use-cases and extensions, e.g. virtual file system, toxic/DMCA content blocklist built-in, etc.|quite complicated, requires separate DHT and/or trustful HTTPS routing to dereference, an additional chatty protocol to host, content-type must be passed out of band for type safety|
-|magnet://|yes, stable and versioned|special side-protocol on standard endpoint on authority-hint(s) provided in query params with known indexing servers as fallback|stable community spec and impls but no normref|less complicated, diverse implementations|requires separate DHT protocol to dereference and/or host, content-type much be passed out of band for type safety, no built-in affordances for tracking/blocklisting toxic or DMCA payloads|
-|`digestMultibase`|no|no|stable, W3C normref|low complexity, zero-dep implementable; works more like SRI than rest of this list, i.e. provides a stable syntax for passing hash alongside URL as part of link object|limited range of hash functions|
+|[ni://][RFC 6920]|yes, IANA-registered, simple /.well-known/ system|HTTPS GET on authority-hint with /.well-known/ query on known caching servers as fallback|IETF [RFC 6920]|low complexity, zero-dep implementable|limited range of hash functions|
+|[ipfs:///][ipfs uri]|yes, but very complex and likely needs to be profiled via regexp to reduce security surface for AP use cases|many round-trips, some unknowable timing|no hope of normref|"kitchen-sink", can handle many different use-cases and extensions, e.g. virtual file system, toxic/DMCA content blocklist built-in, etc.|quite complicated, requires separate DHT and/or trustful HTTPS routing to dereference, an additional chatty protocol to host, content-type must be passed out of band for type safety|
+|[magnet://][magnet uri]|yes, stable and versioned|special side-protocol on standard endpoint on authority-hint(s) provided in query params with known indexing servers as fallback|stable community spec and impls but no normref|less complicated, diverse implementations|requires separate DHT protocol to dereference and/or host, content-type much be passed out of band for type safety, no built-in affordances for tracking/blocklisting toxic or DMCA payloads|
+|[eris]|URN-only|[straightforward urn-->deref algo][eris-http]|no but [spec stable since 2022 and community tooling](https://eris.codeberg.page/eer/)|interesting deduplication/tracking-avoidant feature ("convergence secret", i.e. arbitrary hash salt to produce new identifiers for tracked content); DNSLink system like IPFS; has an SSB-like append-only mode per publisher; has its own RFC Canonicalization for content-addressing RDF recrods|no way of preserving or tracking content-type; no identity-awareness or built-in metadata layer|
+|[UUIDv5]|no|IETF [RFC 9562]|no|takes a URL as input and turns it into an opaque UUID (but can be verified if you know the original URL)|not a *content*-identifier, just a one-way commitment to the URL itself|
+|[digestMultibase]|no|no|stable, W3C normref|low complexity, zero-dep implementable; works more like SRI than rest of this list, i.e. provides a stable syntax for passing hash alongside URL as part of link object|limited range of hash functions|
 |[hashlink]|yes|deref as normal but with checksum in hand at the end|stable, but unlikely to get normative status|very simple syntax for expressing hash in query parameter of URLs|query parameters not ideal in every use-case, can get lost in transport, etc.|
-|at://|current scheme is URL-spec non-conformant|very straightforward, similar to DID URL default behavior (dereference DID, transform rest of URL to PDS-based to dereference)|iterating (slowly) in IETF|uses individual user's DIDs as "authority" component, for now at least|requires trustful and/or complex resolution (merkel tree walking), non-normative CBOR serialization, all events fully-public and non-repudiable|
+
+Actor-as-Authority Schemes
+
+|type|URI scheme|resolution+deref algorithms|normref|pros|cons|
+|---|---|---|---|---|---|
+|[secure scuttlebutt log][ssb]|[urn only][ssb uri], no authorities in TCP sense|locating is the tricky/OOB part, dereferencing deterministic once you have the bytes|unlikely|per-publisher append-only non-repudiable log|key rotation not possible; much discovery is OOB/underspecified by web standards|
+|[at://][aturi]|current scheme is URL-spec non-conformant|very straightforward, similar to DID URL default behavior (dereference DID, transform rest of URL to PDS-based to dereference)|iterating (slowly) in IETF|uses individual user's DIDs as "authority" component, for now at least|requires trustful and/or complex resolution (merkel tree walking), non-normative CBOR serialization, all events fully-public and non-repudiable|
+|[ap://][FEP-ef61]|current scheme is URL-spec non-conformant|similar to NIH, a /.well-known/ gateway can be tried on any server suspected of having a copy; DID support and DID Doc resolution unspecified|unlikely unless APWG adopts it as a work item with strong CG consensus|rightly defers authenticity and integrity to DI signatures|malicious server ejecting tenant case is unspecified, DID resolution is unspecified, and case of two valid conflicting signatures from the same key on different servers also| 
+|[FEP-e3e9]|not needed|not needed|unlikely|no backwards-compatibility issues|just moved server-dependency to an independent server (at additional cost to user)|
 |[DID URLs] (in general)|per-method URN scheme + base/default DID URL pathing behavior|per-method (resolve DID Doc before deref path/params)|DID URL is ratified, DID Resolution (debatably on critical path) still unstable|portable|resolution, security all depend on the specific method used|
 |DID URLs ([webvh])|yes, specified URN scheme + a simple /.well-known/ translation for URL fallback|clearly specified in method spec|v1.0 at DIF, on shortlist for W3C DID Methods|low complexity, zero-dep implementation|some complexity around witnessing to be 100% tamper-evident against malicious servers (requires something like soatak's key transparency system)|
-|[UUIDv5]|no|IETF [RFC 9562]|no|takes a URL as input and turns it into an opaque UUID (but can be verified if you know the original URL)|not a *content*-identifier, just a one-way commitment to the URL itself|
-|[eris]|URN-only|[straightforward urn-->deref algo][eris-http]|no but [spec stable since 2022 and community tooling](https://eris.codeberg.page/eer/)|interesting deduplication/tracking-avoidant feature ("convergence secret", i.e. arbitrary hash salt to produce new identifiers for tracked content); DNSLink system like IPFS; has an SSB-like append-only mode per publisher; has its own RFC Canonicalization for content-addressing RDF recrods|no way of preserving or tracking content-type; no identity-awareness or built-in metadata layer|
-|[secure scuttlebutt log][ssb]|[urn only][ssb uri], no authorities in TCP sense|locating is the tricky/OOB part, dereferencing deterministic once you have the bytes|unlikely|per-publisher append-only non-repudiable log|key rotation not possible; much discovery is OOB/underspecified by web standards|
 
 ## References
 
 * [Caddy HTTP Server][caddy]
+* [`cipub`, a proof-of-concept playground I "coded" in TypeScript/NPX to show some client-side identity  possibilities][prototyping exercise]
 * [Dead Internet Theory][dead internet]
 * [DID Spec][DIDs]
 * [DID Spec: DID URL syntax][DID URLs]
@@ -256,27 +266,31 @@ A more exhaustive list would take more time to prepare than this whole article t
 * [IETF Internet-draft for Hash-Links query parameter convention][hashlink]
 * [ActivityPub Media Upload draft/proto-FEP][media-upload]
 * [URI Scheme for Named Information Hashes][nih uri]
-* [`cipub`, a proof-of-concept playground I "coded" in TypeScript/NPX to show some possibilities][prototyping exercise]
 * [IETF RFC 6920: Named Information Hashes][RFC 6920]
 * [IETF RFCs for UUIDs][RFC 9562]
-* [IETF RFCs for UUIDs: UUIDv5 section][UUIDv5v]
+* [IETF RFCs for UUIDs: UUIDv5 section][UUIDv5]
 * [SubResource Integrity][sri]
 * [Timestamp IDs (used in atproto)][TIDs]
 * [Verifiable Credential Data Integrity Spec][vcdi]
 * [did:webvh Spec][webvh]
 
+[aturi]: https://atproto.com/specs/at-uri-scheme
 [caddy]: https://github.com/caddyserver/caddy
 [dead internet]: https://en.wikipedia.org/wiki/Dead_Internet_theory
 [DIDs]: https://w3c.github.io/did/
 [DID URLs]: https://www.w3.org/TR/did/upcoming/#did-url-syntax
 [didwebvh-ts]: https://github.com/decentralized-identity/didwebvh-ts
+[digestMultibase]: https://www.w3.org/TR/vc-data-integrity/#resource-integrity
 [eris]: https://eris.codeberg.page/
 [eris-http]: https://eris.codeberg.page/eer/http.xml
 [fedify]: https://github.com/fedify-dev/fedify
 [FEP-cd47]: https://fediverse.codeberg.page/fep/fep/cd47/
-[FEP-73cd]: https://fediverse.codeberg.page/fep/fep/73cd/
+[FEP-ef61]: https://fediverse.codeberg.page/fep/fep/ef61/
 [FEP-e3e9]: https://fediverse.codeberg.page/fep/fep/e3e9/
+[FEP-73cd]: https://fediverse.codeberg.page/fep/fep/73cd/
 [hashlink]: https://tools.ietf.org/html/draft-sporny-hashlink-05
+[ipfs uri]: https://github.com/ipfs/specs/blob/main/src/ipfs-uri.md
+[magnet uri]: https://en.wikipedia.org/wiki/Magnet_URI_scheme#Format
 [media-upload]: https://www.w3.org/TR/2017/CR-activitypub-20170907/#uploading-media
 [nih uri]: https://datatracker.ietf.org/doc/html/rfc6920#section-3
 [prototyping exercise]: https://codeberg.org/bumblefudge/cipub/
