@@ -227,7 +227,7 @@ Note: these are the variously content-addressing-based identifier schemes I'm mo
 A more exhaustive list would take more time to prepare than this whole article took to write, and while I might have missed one or two good options for ActivityPub, I stand behind these as the bulk of a list of options worth considering.
 
 |type|URI scheme|resolution+deref algorithms|normref|pros|cons|
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 |ni://|yes, IANA-registered, simple /.well-known/ system|HTTPS GET on authority-hint with /.well-known/ query on known caching servers as fallback|IETF [RFC 6920]|low complexity, zero-dep implementable|limited range of hash functions|
 |ipfs://|yes, but very complex and likely needs to be profiled via regexp to reduce security surface for AP use cases|many round-trips, some unknowable timing|no hope of normref|"kitchen-sink", can handle many different use-cases and extensions, e.g. virtual file system, toxic/DMCA content blocklist built-in, etc.|quite complicated, requires separate DHT and/or trustful HTTPS routing to dereference, an additional chatty protocol to host, content-type must be passed out of band for type safety|
 |magnet://|yes, stable and versioned|special side-protocol on standard endpoint on authority-hint(s) provided in query params with known indexing servers as fallback|stable community spec and impls but no normref|less complicated, diverse implementations|requires separate DHT protocol to dereference and/or host, content-type much be passed out of band for type safety, no built-in affordances for tracking/blocklisting toxic or DMCA payloads|
