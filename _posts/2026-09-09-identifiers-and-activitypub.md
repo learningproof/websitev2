@@ -240,26 +240,26 @@ A more exhaustive list would take more time to prepare than this whole article t
 
 ## References
 
-* [caddy]
-* [dead internet]
-* [DIDs]
-* [DID URLs]
-* [didwebvh-ts]
-* [fedify]
-* [FEP-cd47]
-* [FEP-73cd]
-* [FEP-e3e9]
-* [hashlink]
-* [media-upload]
-* [nih uri]
-* [prototyping exercise]
-* [RFC 6920]
-* [RFC 9562]
-* [sri]
-* [TIDs]
-* [UUIDv5]
-* [vcdi]
-* [webvh]
+* [Caddy HTTP Server][caddy]
+* [Dead Internet Theory][dead internet]
+* [DID Spec][DIDs]
+* [DID Spec: DID URL syntax][DID URLs]
+* [did:webvh typescript ref impl][didwebvh-ts]
+* [Fedify AcitivityPub library in TS][fedify]
+* [FEP-cd47: Federation-friendly Addressing and Deduplication Use-Cases¶][FEP-cd47]
+* [FEP-73cd: Migration User Stories][FEP-73cd]
+* [FEP-e3e9: Actor-Relative URLs][FEP-e3e9]
+* [IETF Internet-draft for Hash-Links query parameter convention][hashlink]
+* [ActivityPub Media Upload draft/proto-FEP][media-upload]
+* [URI Scheme for Named Information Hashes][nih uri]
+* [`cipub`, a proof-of-concept playground I "coded" in TypeScript/NPX to show some possibilities][prototyping exercise]
+* [IETF RFC 6920: Named Information Hashes][RFC 6920]
+* [IETF RFCs for UUIDs][RFC 9562]
+* [IETF RFCs for UUIDs: UUIDv5 section][UUIDv5v]
+* [SubResource Integrity][sri]
+* [Timestamp IDs (used in atproto)][TIDs]
+* [Verifiable Credential Data Integrity Spec][vcdi]
+* [did:webvh Spec][webvh]
 
 [caddy]: https://github.com/caddyserver/caddy
 [dead internet]: https://en.wikipedia.org/wiki/Dead_Internet_theory
@@ -275,7 +275,7 @@ A more exhaustive list would take more time to prepare than this whole article t
 [nih uri]: https://datatracker.ietf.org/doc/html/rfc6920#section-3
 [prototyping exercise]: https://codeberg.org/bumblefudge/cipub/
 [RFC 6920]: https://datatracker.ietf.org/doc/html/rfc6920
-[RFC 9562]: https://www.rfc-editor.org/info/rfc9562/#section-5.5
+[RFC 9562]: https://www.rfc-editor.org/info/rfc9562/
 [sri]: https://www.w3.org/TR/sri-2/
 [TIDs]: https://learningproof.github.io/tid-i-d/draft-goldman-tid.html
 [UUIDv5]: https://www.rfc-editor.org/info/rfc9562/#section-5.5
