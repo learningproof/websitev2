@@ -244,17 +244,21 @@ Actor-as-Authority Schemes
 |---|---|---|---|---|---|
 |[secure scuttlebutt log][ssb]|[urn only][ssb uri], no authorities in TCP sense|locating is the tricky/OOB part, dereferencing deterministic once you have the bytes|unlikely|per-publisher append-only non-repudiable log|key rotation not possible; much discovery is OOB/underspecified by web standards|
 |[at://][aturi]|current scheme is URL-spec non-conformant|very straightforward, similar to DID URL default behavior (dereference DID, transform rest of URL to PDS-based to dereference)|iterating (slowly) in IETF|uses individual user's DIDs as "authority" component, for now at least|requires trustful and/or complex resolution (merkel tree walking), non-normative CBOR serialization, all events fully-public and non-repudiable|
+|[DASL]|[rasl spec](https://dasl.ing/rasl.html)|NIH-like URN format|unlikely|more generic superset of ATP, very simple/NIH-like|requires serialization as bespoke CBOR profile for which no normref is possible|
 |[ap://][FEP-ef61]|current scheme is URL-spec non-conformant|similar to NIH, a /.well-known/ gateway can be tried on any server suspected of having a copy; DID support and DID Doc resolution unspecified|unlikely unless APWG adopts it as a work item with strong CG consensus|rightly defers authenticity and integrity to DI signatures|malicious server ejecting tenant case is unspecified, DID resolution is unspecified, and case of two valid conflicting signatures from the same key on different servers also| 
 |[FEP-e3e9]|not needed|not needed|unlikely|no backwards-compatibility issues|just moved server-dependency to an independent server (at additional cost to user)|
 |[DID URLs] (in general)|per-method URN scheme + base/default DID URL pathing behavior|per-method (resolve DID Doc before deref path/params)|DID URL is ratified, DID Resolution (debatably on critical path) still unstable|portable|resolution, security all depend on the specific method used|
 |DID URLs ([webvh])|yes, specified URN scheme + a simple /.well-known/ translation for URL fallback|clearly specified in method spec|v1.0 at DIF, on shortlist for W3C DID Methods|low complexity, zero-dep implementation|some complexity around witnessing to be 100% tamper-evident against malicious servers (requires something like soatak's key transparency system)|
+|[did:dns]|just a URN scheme, no URL scheme per se|vanilla DNS records-->DID Doc|not in scope for DID Methods WG, but could be v1.0'd as a CCG spec (equiv to SWICG report)|allows DNS records to be the "independent authority"|can ONLY set keys and service endpoints, not arbitrary properties (e.g. "inbox" and "outbox" would have to be set as serviceEndpoints, not top-level properties)|
 
 ## References
 
 * [Caddy HTTP Server][caddy]
 * [`cipub`, a proof-of-concept playground I "coded" in TypeScript/NPX to show some client-side identity  possibilities][prototyping exercise]
 * [Dead Internet Theory][dead internet]
+* [DASL], generic content-addressing superset of ATP data language
 * [DID Spec][DIDs]
+* [did:dns] method specification
 * [DID Spec: DID URL syntax][DID URLs]
 * [did:webvh typescript ref impl][didwebvh-ts]
 * [ERIS content-addressing specification][eris]
@@ -276,8 +280,10 @@ Actor-as-Authority Schemes
 
 [aturi]: https://atproto.com/specs/at-uri-scheme
 [caddy]: https://github.com/caddyserver/caddy
+[dasl]: https://dasl.ing/
 [dead internet]: https://en.wikipedia.org/wiki/Dead_Internet_theory
 [DIDs]: https://w3c.github.io/did/
+[did:dns]: https://danubetech.github.io/did-method-dns/
 [DID URLs]: https://www.w3.org/TR/did/upcoming/#did-url-syntax
 [didwebvh-ts]: https://github.com/decentralized-identity/didwebvh-ts
 [digestMultibase]: https://www.w3.org/TR/vc-data-integrity/#resource-integrity
@@ -287,6 +293,8 @@ Actor-as-Authority Schemes
 [FEP-cd47]: https://fediverse.codeberg.page/fep/fep/cd47/
 [FEP-ef61]: https://fediverse.codeberg.page/fep/fep/ef61/
 [FEP-e3e9]: https://fediverse.codeberg.page/fep/fep/e3e9/
+[FEP-fffd]: https://fediverse.codeberg.page/fep/fep/fffd/
+[FEP-1042]: https://fediverse.codeberg.page/fep/fep/1042/
 [FEP-73cd]: https://fediverse.codeberg.page/fep/fep/73cd/
 [hashlink]: https://tools.ietf.org/html/draft-sporny-hashlink-05
 [ipfs uri]: https://github.com/ipfs/specs/blob/main/src/ipfs-uri.md
