@@ -253,6 +253,9 @@ Actor-as-Authority Schemes
 
 ## References
 
+* [Slides](https://learningproof.xyz/assets/static/New%20Identifiers%20for%20new%20Webs.pdf) from SWICG presentation, 15 Sept 2026
+
+* [ActivityPub Media Upload draft/proto-FEP][media-upload]
 * [Caddy HTTP Server][caddy]
 * [`cipub`, a proof-of-concept playground I "coded" in TypeScript/NPX to show some client-side identity  possibilities][prototyping exercise]
 * [Dead Internet Theory][dead internet]
@@ -268,11 +271,11 @@ Actor-as-Authority Schemes
 * [FEP-73cd: Migration User Stories][FEP-73cd]
 * [FEP-e3e9: Actor-Relative URLs][FEP-e3e9]
 * [IETF Internet-draft for Hash-Links query parameter convention][hashlink]
-* [ActivityPub Media Upload draft/proto-FEP][media-upload]
-* [URI Scheme for Named Information Hashes][nih uri]
 * [IETF RFC 6920: Named Information Hashes][RFC 6920]
-* [IETF RFCs for UUIDs][RFC 9562]
-* [IETF RFCs for UUIDs: UUIDv5 section][UUIDv5]
+* [IETF RFC 6920: URI Scheme for Named Information Hashes][nih uri]
+* [IETF RFC for UUIDs][RFC 9562]
+* [IETF RFC for UUIDs: UUIDv5 section][UUIDv5]
+* [NextGraph URI scheme][nuri scheme]
 * [SubResource Integrity][sri]
 * [Timestamp IDs (used in atproto)][TIDs]
 * [Verifiable Credential Data Integrity Spec][vcdi]
@@ -301,6 +304,7 @@ Actor-as-Authority Schemes
 [magnet uri]: https://en.wikipedia.org/wiki/Magnet_URI_scheme#Format
 [media-upload]: https://www.w3.org/TR/2017/CR-activitypub-20170907/#uploading-media
 [nih uri]: https://datatracker.ietf.org/doc/html/rfc6920#section-3
+[nuri scheme]: https://learningproof.xyz/assets/static/New%20Identifiers%20for%20new%20Webs.pdf
 [prototyping exercise]: https://codeberg.org/bumblefudge/cipub/
 [RFC 6920]: https://datatracker.ietf.org/doc/html/rfc6920
 [RFC 9562]: https://www.rfc-editor.org/info/rfc9562/
