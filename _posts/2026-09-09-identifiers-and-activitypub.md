@@ -263,6 +263,7 @@ Actor-as-Authority Schemes
 * [DID Spec][DIDs]
 * [did:dns] method specification
 * [DID Spec: DID URL syntax][DID URLs]
+* [did:webvh Spec][webvh]
 * [did:webvh typescript ref impl][didwebvh-ts]
 * [ERIS content-addressing specification][eris]
 * [ERIS over HTTP specification][eris-http]
@@ -276,10 +277,10 @@ Actor-as-Authority Schemes
 * [IETF RFC for UUIDs][RFC 9562]
 * [IETF RFC for UUIDs: UUIDv5 section][UUIDv5]
 * [NextGraph URI scheme][nuri scheme]
+* [Name2Thing Resolution Vision Statement][n2t.net] (thanks @trwnh!)
 * [SubResource Integrity][sri]
 * [Timestamp IDs (used in atproto)][TIDs]
 * [Verifiable Credential Data Integrity Spec][vcdi]
-* [did:webvh Spec][webvh]
 
 [aturi]: https://atproto.com/specs/at-uri-scheme
 [caddy]: https://github.com/caddyserver/caddy
@@ -305,6 +306,7 @@ Actor-as-Authority Schemes
 [media-upload]: https://www.w3.org/TR/2017/CR-activitypub-20170907/#uploading-media
 [nih uri]: https://datatracker.ietf.org/doc/html/rfc6920#section-3
 [nuri scheme]: https://learningproof.xyz/assets/static/New%20Identifiers%20for%20new%20Webs.pdf
+[n2t.net]: https://n2t.net/e/n2t_vision.html
 [prototyping exercise]: https://codeberg.org/bumblefudge/cipub/
 [RFC 6920]: https://datatracker.ietf.org/doc/html/rfc6920
 [RFC 9562]: https://www.rfc-editor.org/info/rfc9562/
